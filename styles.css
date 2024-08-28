@@ -1,0 +1,185 @@
+/* Base styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  flex: 1;
+  margin: 0 5px;
+}
+
+#generate-inputs {
+  background-color: #007bff;
+}
+
+#assign-rooms {
+  background-color: #28a745;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.input-area {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.person-input {
+  margin-bottom: 15px;
+}
+
+.person-header {
+  margin-bottom: 10px;
+}
+
+.name-input {
+  width: 100%;
+  /* Ensure it takes the full width of its container */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.room-text {
+  flex: 1;
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Results styling */
+.results {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.results p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+}
+
+.results p:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+/* Control buttons styling */
+.controls {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  gap: 10px;
+}
+
+.control-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  /* Black background */
+  color: #fff;
+  /* White text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.control-button:hover {
+  background-color: #333;
+  /* Darker black */
+}
+
+.control-button:active {
+  background-color: #555;
+  /* Even darker black */
+}
