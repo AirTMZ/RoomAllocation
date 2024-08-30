@@ -3,44 +3,24 @@
 
 /* Base styling */
 body {
-  font-family: 'Ubuntu', sans-serif;
   background-color: #121212;
   color: #e0e0e0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
 }
 
 /* Container styling */
 .container {
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 80px;
-  box-sizing: border-box;
 }
 
 /* Header styling */
 h1 {
   color: #90caf9;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 2.5em;
-  text-align: center;
 }
 
 /* Subtitle styling */
 .subtitle {
   color: #b0bec5;
-  font-family: 'Ubuntu', sans-serif;
-  margin-bottom: 20px;
-  font-size: 1.2em;
-  text-align: center;
 }
 
 /* Input styling */
@@ -93,23 +73,13 @@ button:hover {
 
 /* Results styling */
 .results {
-  display: none;
-  margin-top: 20px;
-  padding: 15px;
   background-color: #1e1e1e;
   border: 1px solid #424242;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .results p {
-  margin: 10px 0;
-  font-size: 16px;
   color: #e0e0e0;
   background-color: #333;
-  padding: 10px;
-  border-radius: 8px;
-  font-family: 'Ubuntu', sans-serif;
 }
 
 .results p:nth-child(even) {
@@ -120,10 +90,5 @@ button:hover {
 footer {
   background-color: #1e1e1e;
   color: #b0bec5;
-  text-align: center;
-  padding: 10px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
