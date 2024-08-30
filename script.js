@@ -148,12 +148,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function scrollToViewElement(element, offset = 0) {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + window.pageYOffset;
-        window.scrollTo({
-            top: elementTop - offset,
-            behavior: 'smooth'
+    function scrollToViewElement(element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start', // Scroll to the top of the element
+            inline: 'nearest' // Ensure the element is scrolled into view horizontally if needed
         });
     }
 
@@ -236,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Wait for a moment to ensure results are rendered, then scroll to view the results
         setTimeout(() => {
-            scrollToViewElement(results, 20); // Offset of 20 pixels for better visibility
+            scrollToViewElement(results); // Ensure results are fully visible
         }, 300); // Adjust delay if necessary
     });
 });
