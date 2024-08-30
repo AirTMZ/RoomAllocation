@@ -6,8 +6,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: auto;
-  /* Allow scrolling */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
 }
 
 /* Base styling */
@@ -17,26 +17,25 @@ body {
   margin: 0;
   padding: 20px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  /* Align items to start to prevent cut-off */
-  height: 100vh;
-  overflow-x: hidden;
-  /* Prevent horizontal scroll */
+  flex-direction: column;
+  align-items: center;
+  /* Center align items horizontally */
+  min-height: 100vh;
+  /* Ensure body takes at least full viewport height */
 }
 
+/* Container styling */
 .container {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  position: relative;
   margin-bottom: 80px;
-  /* Ensure space for controls */
-  overflow: hidden;
-  /* Prevent internal overflow */
+  /* Adjust for space to footer */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in element's total width and height */
 }
 
 /* Header styling */
@@ -44,6 +43,8 @@ h1 {
   text-align: center;
   color: #333;
   font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 20px;
+  font-size: 2em;
 }
 
 /* Form group styling */
@@ -54,7 +55,7 @@ h1 {
 label {
   display: block;
   margin-bottom: 8px;
-  font-weight: bold;
+  font-weight: 500;
   color: #555;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -62,18 +63,20 @@ label {
 /* Input styling */
 input[type="number"] {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   font-size: 16px;
   box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
   font-family: 'Ubuntu', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 input[type="number"]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 
 /* Button styling */
@@ -84,7 +87,7 @@ input[type="number"]:focus {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 50px;
   color: #fff;
@@ -94,14 +97,15 @@ button {
   flex: 1;
   margin: 0 5px;
   font-family: 'Ubuntu', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #generate-inputs {
-  background-color: #007bff;
+  background-color: #3f90f2;
 }
 
 #assign-rooms {
-  background-color: #28a745;
+  background-color: #4caf50;
 }
 
 button:hover {
@@ -121,21 +125,33 @@ button:active {
 /* Person input styling */
 .person-input {
   margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .person-header {
   margin-bottom: 10px;
   font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+}
+
+.person-header:hover {
+  opacity: 0.8;
 }
 
 .name-input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   font-size: 16px;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .inputs-container {
@@ -147,11 +163,13 @@ button:active {
 .room-text {
   flex: 1;
   min-width: 100px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   font-size: 16px;
   font-family: 'Ubuntu', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Results styling */
@@ -159,19 +177,19 @@ button:active {
   display: none;
   margin-top: 20px;
   padding: 15px;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .results p {
   margin: 10px 0;
   font-size: 16px;
   color: #333;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   padding: 10px;
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
+  border-radius: 8px;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -183,7 +201,8 @@ button:active {
 .controls {
   display: flex;
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
+  /* Adjust for space to footer */
   right: 20px;
   gap: 10px;
   z-index: 1000;
@@ -193,7 +212,7 @@ button:active {
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #000;
   color: #fff;
   font-size: 20px;
@@ -212,4 +231,24 @@ button:active {
 
 .control-button:active {
   background-color: #555;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  /* Bold */
 }
