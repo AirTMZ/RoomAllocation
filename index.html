@@ -5,13 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Room Matcher</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" id="defaultStyle">
+  <link rel="stylesheet" href="darkStyles.css" id="darkStyle" disabled>
 </head>
 
 <body>
   <div class="container">
     <h1>Room Matcher</h1>
     <p class="subtitle">Find the ideal rooms for everyone!</p>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+
     <div class="form-group">
       <label for="room-count">Number of Rooms</label>
       <input type="number" id="room-count" placeholder="Enter number of rooms" min="1">
@@ -28,9 +33,10 @@
     <div class="results"></div>
   </div>
   <footer>
-    <p>Ver 2.1</p>
+    <p>Ver 2.5</p>
   </footer>
   <script src="script.js"></script>
+  <script src="darkMode.js"></script>
 </body>
 
 </html>

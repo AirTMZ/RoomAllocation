@@ -7,7 +7,6 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
-  /* Prevent horizontal scroll */
 }
 
 /* Base styling */
@@ -20,7 +19,6 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  /* Ensure body takes at least full viewport height */
 }
 
 /* Container styling */
@@ -32,27 +30,22 @@ body {
   width: 100%;
   max-width: 600px;
   margin-bottom: 80px;
-  /* Adjust for space to footer */
   box-sizing: border-box;
-  /* Ensure padding and border are included in element's total width and height */
 }
 
 /* Header styling */
 h1 {
   text-align: center;
   color: #007bff;
-  /* Updated color */
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 10px;
   font-size: 2.5em;
-  /* Updated size */
 }
 
 /* Subtitle styling */
 .subtitle {
   text-align: center;
   color: #6c757d;
-  /* Subtle color */
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 20px;
   font-size: 1.2em;
@@ -113,7 +106,6 @@ button {
 
 #generate-inputs {
   background-color: #3f90f2;
-  /* Original color */
 }
 
 #assign-rooms {
@@ -122,7 +114,6 @@ button {
 
 #assign-rooms.enabled {
   background-color: #4caf50;
-  /* Green when enabled */
 }
 
 button:hover {
@@ -219,7 +210,6 @@ button:active {
   display: flex;
   position: fixed;
   bottom: 80px;
-  /* Adjust for space to footer */
   right: 20px;
   gap: 10px;
   z-index: 1000;
@@ -265,8 +255,57 @@ footer p {
   margin: 0;
   font-size: 14px;
   color: #6c757d;
-  /* Updated color */
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
-  /* Bold */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  /* Adjusted for pill shape */
+  color: #000;
+  font-size: 1.5em;
+  cursor: pointer;
+  line-height: 1;
+  padding: 10px 20px;
+  /* Ensures pill shape */
+  z-index: 1001;
+  transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+/* Light mode styles */
+body.light-mode .dark-mode-toggle {
+  border-color: rgba(0, 0, 0, 0.1);
+  /* Subtle border in light mode */
+}
+
+body.light-mode .dark-mode-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Slightly visible background in light mode */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  /* Highlight effect in light mode */
+}
+
+/* Dark mode styles */
+body.dark-mode .dark-mode-toggle {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+  /* Subtle border in dark mode */
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slightly visible background in dark mode */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  /* Highlight effect in dark mode */
+}
+
+.dark-mode-toggle:active {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Slightly darker background on click */
 }
