@@ -115,9 +115,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const personDiv = document.createElement('div');
         personDiv.className = 'person-input';
+
+        // Determine the person index based on current number of person inputs
+        const personIndex = document.querySelectorAll('.person-input').length + 1;
+
         personDiv.innerHTML = `
             <div class="person-header">
-                <input type="text" placeholder="Name" class="name-input">
+                <input type="text" placeholder="Person ${personIndex}" class="name-input">
             </div>
             <div class="inputs-container"></div>
         `;
