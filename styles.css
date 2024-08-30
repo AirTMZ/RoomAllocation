@@ -19,7 +19,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Center align items horizontally */
   min-height: 100vh;
   /* Ensure body takes at least full viewport height */
 }
@@ -41,10 +40,22 @@ body {
 /* Header styling */
 h1 {
   text-align: center;
-  color: #333;
+  color: #007bff;
+  /* Updated color */
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+  /* Updated size */
+}
+
+/* Subtitle styling */
+.subtitle {
+  text-align: center;
+  color: #6c757d;
+  /* Subtle color */
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 20px;
-  font-size: 2em;
+  font-size: 1.2em;
 }
 
 /* Form group styling */
@@ -102,10 +113,16 @@ button {
 
 #generate-inputs {
   background-color: #3f90f2;
+  /* Original color */
 }
 
 #assign-rooms {
+  background-color: #d3d3d3;
+}
+
+#assign-rooms.enabled {
   background-color: #4caf50;
+  /* Green when enabled */
 }
 
 button:hover {
@@ -128,7 +145,7 @@ button:active {
   border: none;
   border-radius: 8px;
   padding: 12px;
-  background-color: #f9f9f9;
+  background-color: #fffdfd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -247,7 +264,8 @@ footer {
 footer p {
   margin: 0;
   font-size: 14px;
-  color: #555;
+  color: #6c757d;
+  /* Updated color */
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   /* Bold */

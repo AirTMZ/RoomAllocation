@@ -87,12 +87,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         assignRoomsButton.disabled = false;
+        assignRoomsButton.classList.add('enabled'); // Add enabled class
         results.style.display = 'none';
         updateControlsVisibility();
     });
 
     addPersonButton.addEventListener('click', function() {
         const roomCount = parseInt(document.getElementById('room-count').value, 10);
+        if (isNaN(roomCount) || roomCount <= 0) {
+            alert('Please generate inputs before adding more people.');
+            return;
+        }
         addPersonInput(roomCount);
         updateControlsVisibility();
     });
@@ -149,6 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     assignRoomsButton.addEventListener('click', function() {
+        if (assignRoomsButton.disabled) {
+            alert('Generate inputs first before calculating');
+            return;
+        }
+
         const numRooms = parseInt(document.getElementById('room-count').value, 10);
 
         if (isNaN(numRooms) || numRooms <= 0) {
