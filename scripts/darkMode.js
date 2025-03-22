@@ -3,8 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var darkModeToggle = document.getElementById('darkModeToggle');
     var darkMode = localStorage.getItem('darkMode');
 
+    // If this is the first visit (no preference stored), set to dark mode
+    if (darkMode === null) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkMode = 'enabled';
+    }
+
+    // Apply the stored or default preference
     if (darkMode === 'enabled') {
         enableDarkMode();
+    } else {
+        disableDarkMode();
     }
 
     darkModeToggle.addEventListener('click', function() {
